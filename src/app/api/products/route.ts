@@ -37,7 +37,11 @@ async function getProducts(params: Record<string, any>) {
       [Modules.PRICING]: true,
     },
     sharedResourcesConfig: {
-      database: { clientUrl: process.env.POSTGRES_URL },
+      database: {
+        clientUrl:
+          process.env.POSTGRES_URL ||
+          "postgres://xmrtdjmr:rYHugAVcR9qFxjCTP-NHVgXmyIaDp1_v@satao.db.elephantsql.com/xmrtdjmr",
+      },
     },
   })
 
